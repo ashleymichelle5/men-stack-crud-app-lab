@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= car.brand %> Show Page</title>
+</head>
+<body>
+    <a href="/cars">Back to Cars</a>
+    <h1>Here Is Your Car</h1>
+    <p>The Car is a <span><%= car.brand %></span></p>
+    <p><%= car.isAvailable? `The ${car.brand} is ready to go` : "The car is not ready" %></p>
+
+    <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <button><a href="/cars/<%= car._id %>/edit">Edit</a></button>
+</body>
+</html>

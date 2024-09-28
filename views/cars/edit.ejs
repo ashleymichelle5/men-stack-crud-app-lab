@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update a Car</title>
+  </head>
+  <body>
+    <a href="/cars/">Back to Cars</a>
+    <h1>Update your <%= car.brand %>!</h1>
+    <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
+      <label for="brand">Brand:</label>
+      <input type="text" name="brand" id="brand" value="<%= car.brand %>" />
+
+      <label for="year">Year:</label>
+      <input type="text" name="year" id="year" value="<%= car.year %>" />
+
+
+      <label for="isAvailable">isAvailable?</label>
+
+      <input type="checkbox" name="isAvailable" id="isAvailable" <%= car.isAvailable ? 'checked' : '' %> />
+
+
+      <button type="submit">Update Your Car</button>
+    </form>
+  </body>
+</html>
